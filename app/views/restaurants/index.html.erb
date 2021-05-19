@@ -1,0 +1,21 @@
+<h1>Restaurants</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>Phone Number</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><strong><%= link_to restaurant.name, restaurant_path(restaurant), class: 'text-decoration-none text-dark' %></strong></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.phone_number %></td>
+        <td><%= restaurant.category.capitalize %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

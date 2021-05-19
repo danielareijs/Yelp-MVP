@@ -1,0 +1,17 @@
+<div class="border p-4 mt-3">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h1><%= @restaurant.name %></h1>
+      <p><strong>Adress:</strong> <%= @restaurant.address %></p>
+      <p><strong>Phone number:</strong> <%= @restaurant.phone_number %></p>
+      <p><strong>Cusine: </strong><%= @restaurant.category.capitalize %></p>
+    </div>
+    <div>
+      <%= link_to "Back", restaurants_path %>
+    </div>
+  </div>
+  <div class="border p-3 d-flex justify-content-between">
+    <h2>Reviews</h2>
+    <%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
+  </div>
+</div>
