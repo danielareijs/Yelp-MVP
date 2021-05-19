@@ -15,10 +15,14 @@
     <h2>Reviews</h2>
     <%= link_to 'Add review', new_restaurant_review_path(@restaurant), class: 'btn btn-success' %>
   </div>
-  <ul class="">
-    <% @restaurant.reviews.each do |review| %>
-      <li class="p-2"><%= review.content %> -
-      <%= "<i class='fas fa-star'></i>".html_safe * review.rating.to_i %></li>
+  <ul>
+    <% if @restaurant.reviews.empty? %>
+      <p>This restaurant has no reviews yet</p>
+    <% else %>
+      <% @restaurant.reviews.each do |review| %>
+        <li class="p-2"><%= review.content %> -
+        <%= "<i class='fas fa-star'></i>".html_safe * review.rating.to_i %></li>
+      <% end %>
     <% end %>
   </ul>
   </div>
